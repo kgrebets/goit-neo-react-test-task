@@ -1,13 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  location: '',
-  type: '',
+  location: "",
+  type: "",
   features: [],
 };
 
-const filterSlice = createSlice({
-  name: 'filter',
+const filtersSlice = createSlice({
+  name: "filters",
   initialState,
   reducers: {
     setLocation(state, action) {
@@ -22,5 +22,7 @@ const filterSlice = createSlice({
   },
 });
 
-export const { setLocation, setType, setFeatures } = filterSlice.actions;
-export default filterSlice.reducer;
+export const { setLocation, setType, setFeatures } = filtersSlice.actions;
+export default filtersSlice.reducer;
+
+export const selectFilter = (state) => state.filters.type;

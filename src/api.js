@@ -1,9 +1,18 @@
-import axios from 'axios';
+import axios from "axios";
 
-const BASE_URL = 'https://example.com'; // заміни на свій бекенд API
+axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/";
 
-const api = axios.create({
-  baseURL: BASE_URL,
-});
+export const getCampersAsync = async (page, limit) => {
+  const { data } = await axios.get("campers", {
+    params: {
+      page,
+      limit,
+    },
+  });
+  return data;
+};
 
-export default api;
+export const getCamperByIdAsync = async (camperId) => {
+  const { data } = await axios.get(`campers/${camperId}`);
+  return data;
+};

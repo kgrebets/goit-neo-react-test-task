@@ -78,3 +78,11 @@
 .showMore:hover {
   background-color: #ff7676;
 }
+
+.favoriteBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}

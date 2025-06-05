@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import styles from "./CamperCard.module.css";
 
+import { useDispatch, useSelector } from "react-redux";
+import { toggleFavorite, isFavorite } from "../../redux/favoritesSlice";
+
 export default function CamperCard({ camper }) {
   const {
     id,
@@ -14,6 +17,14 @@ export default function CamperCard({ camper }) {
     kitchen,
     AC,
   } = camper;
+
+  const dispatch = useDispatch();
+  const favorite = useSelector(isFavorite(id));
+
+  const handleToggleFavorite = () => {
+    dispatch(toggleFavorite(id));
+  };
+
   return (
     <div className={styles.card}>
       <img src={gallery[0].thumb} alt={name} className={styles.image} />
@@ -44,6 +55,9 @@ export default function CamperCard({ camper }) {
           Show more
         </Link>
       </div>
+      <button className={styles.favoriteBtn} onClick={handleToggleFavorite}>
+        {favorite ? "❤️" : "🤍"}
+      </button>
     </div>
   );
 }

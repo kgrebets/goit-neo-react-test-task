@@ -46,11 +46,11 @@ const campersSlice = createSlice({
       .addCase(fetchCampers.rejected, (state, action) => {
         state.loading = false;
 
-        const err = action.payload;
-        if (err.status === 404) {
+        const error = action.payload;
+        if (error?.status === 404) {
           state.items = [];
         } else {
-          state.error = err.message;
+          state.error = error?.message || "Unknown error";
         }
       });
   },

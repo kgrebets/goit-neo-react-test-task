@@ -1,9 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  location: "",
-  type: "",
-  features: [],
+  location: null, //"Ukraine, Kyiv"
+  AC: null, //true | null,
+  kitchen: null, //true | null
+  TV: null, //true | null
+  bathroom: null, //true | null
+  transmission: null, //"automatic" | "manual",
+  form: null, //"alcove" | "fullyIntegrated" | "panelTruck"
 };
 
 const filtersSlice = createSlice({
@@ -13,16 +17,43 @@ const filtersSlice = createSlice({
     setLocation(state, action) {
       state.location = action.payload;
     },
-    setType(state, action) {
-      state.type = action.payload;
+    setAC(state) {
+      state.AC = state.AC === true ? null : true;
     },
-    setFeatures(state, action) {
-      state.features = action.payload;
+    setTransmission(state) {
+      state.transmission =
+        state.transmission === "automatic" ? null : "automatic";
+    },
+    setKitchen(state) {
+      state.kitchen = state.kitchen === true ? null : true;
+    },
+    setTV(state) {
+      state.TV = state.TV === true ? null : true;
+    },
+    setBathroom(state) {
+      state.bathroom = state.bathroom === true ? null : true;
+    },
+    setVehicleType(state, action) {
+      state.form = state.form === action.payload ? null : action.payload;
     },
   },
 });
 
-export const { setLocation, setType, setFeatures } = filtersSlice.actions;
+export const {
+  setLocation,
+  setAC,
+  setTransmission,
+  setKitchen,
+  setTV,
+  setBathroom,
+  setVehicleType,
+} = filtersSlice.actions;
 export default filtersSlice.reducer;
 
-export const selectFilter = (state) => state.filters.type;
+export const selectLocationFilter = (state) => state.filters.location;
+export const selectACFilter = (state) => state.filters.AC;
+export const selectTransmissionFilter = (state) => state.filters.transmission;
+export const selectKitchenFilter = (state) => state.filters.kitchen;
+export const selectTVFilter = (state) => state.filters.TV;
+export const selectBathroomFilter = (state) => state.filters.bathroom;
+export const selectVehicleTypeFilter = (state) => state.filters.form;

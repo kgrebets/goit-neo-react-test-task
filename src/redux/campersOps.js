@@ -3,12 +3,21 @@ import { getCampersAsync } from "../api";
 
 export const fetchCampers = createAsyncThunk(
   "campers/fetchCampers",
-  async (_, { rejectWithValue }) => {
+  async (_, { getState, rejectWithValue }) => {
     try {
-      const response = await getCampersAsync(1, 5);
-      return response.items;
+      const state = getState();
+      const filters = state.filters;
+      const { page, limit } = state.campers;
+
+      const response = await getCampersAsync(page, limit, filters);
+
+      return response;
     } catch (error) {
-      return rejectWithValue(error.message);
+      return rejectWithValue({
+        status: error.response?.status,
+        message: error.message,
+        //data: error.response?.data,
+      });
     }
   }
 );

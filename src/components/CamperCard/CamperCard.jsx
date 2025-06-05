@@ -14,7 +14,6 @@ export default function CamperCard({ camper }) {
     kitchen,
     AC,
   } = camper;
-
   return (
     <div className={styles.card}>
       <img src={gallery[0].thumb} alt={name} className={styles.image} />

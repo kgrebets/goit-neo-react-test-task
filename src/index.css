@@ -1,4 +1,21 @@
 :root {
+  --color-dark: #101828;
+  --color-dark-blue: #475467;
+  --color-grey: #6C717B;
+  --color-red: #E44848;
+  --color-red-dark: #DB4343;
+  --color-yellow: #FFC531;
+  --color-grey-light: #DADDE1;
+  --color-grey-lighter: #F2F4F7;
+  --color-grey-lightest: #F7F7F7;
+  --color-white: #FFFFFF;
+}
+
+/* background: var(--color-grey-lightest);
+color: var(--color-dark-blue); */
+
+
+:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;

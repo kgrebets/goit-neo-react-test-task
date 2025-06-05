@@ -22,5 +22,4 @@ const favoritesSlice = createSlice({
 export const { toggleFavorite } = favoritesSlice.actions;
 export default favoritesSlice.reducer;
 
-//export const selectFavoriteIds = (state) => state.favorites.ids;
 export const isFavorite = (id) => (state) => state.favorites.ids.includes(id);

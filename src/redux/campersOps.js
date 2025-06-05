@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getCampersAsync } from "../api";
+import { getCamperByIdAsync, getCampersAsync } from "../api";
 
 export const fetchCampers = createAsyncThunk(
   "campers/fetchCampers",
@@ -18,6 +18,17 @@ export const fetchCampers = createAsyncThunk(
         message: error.message,
         //data: error.response?.data,
       });
+    }
+  }
+);
+
+export const fetchCamperDetails = createAsyncThunk(
+  "camperDetails/fetchCamperDetails",
+  async (id, { rejectWithValue }) => {
+    try {
+      return await getCamperByIdAsync(id);
+    } catch (error) {
+      return rejectWithValue(error.message);
     }
   }
 );

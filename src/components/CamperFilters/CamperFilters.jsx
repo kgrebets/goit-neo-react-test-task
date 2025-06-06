@@ -18,6 +18,7 @@ import {
 } from "../../redux/filtersSlice";
 import { fetchCampers } from "../../redux/campersOps";
 import { setPage } from "../../redux/campersSlice";
+import clsx from "clsx";
 
 export default function CamperFilters() {
   const dispatch = useDispatch();
@@ -53,68 +54,97 @@ export default function CamperFilters() {
   };
   return (
     <div className={styles.container}>
-      Location:
+      <h1 className="visuallyHidden">Campers catalog</h1>
+      <p className={styles.locationTitle}>Location</p>
       <input
         type="text"
         value={location}
         placeholder="Enter location"
         onChange={handleLocationChange}
       />
-      <hr />
-      <hr />
-      <h2>Vehicle equipment</h2>
-      <p>
-        AC: {labelAC}
-        <button type="button" onClick={handleACClick}>
+      <h2 className={styles.filtersTitle}>Filters</h2>
+      <h3 className={styles.filtersGroupTitle}>Vehicle equipment</h3>
+      <div className={styles.filtersButtonContainer}>
+        <button
+          type="button"
+          className={clsx(styles.filterButton, hasAC && styles.active)}
+          onClick={handleACClick}
+        >
           AC
         </button>
-      </p>
-      <p>
-        Transmission: {transmission}
-        <button type="button" onClick={handleTransmissionClick}>
-          AC
+        <button
+          type="button"
+          className={clsx(styles.filterButton, transmission && styles.active)}
+          onClick={handleTransmissionClick}
+        >
+          <span>Automatic</span>
         </button>
-      </p>
-      <p>
-        Kitchen: {labelK}
-        <button type="button" onClick={handleKitchenClick}>
+        <button
+          type="button"
+          className={clsx(styles.filterButton, hasKitchen && styles.active)}
+          onClick={handleKitchenClick}
+        >
           Kitchen
         </button>
-      </p>
-      <p>
-        TV: {labelTV}
-        <button type="button" onClick={handleTVClick}>
+        <button
+          type="button"
+          className={clsx(styles.filterButton, hasTV && styles.active)}
+          onClick={handleTVClick}
+        >
           TV
         </button>
-      </p>
-      <p>
-        Bathroom: {labelBathroom}
-        <button type="button" onClick={handleBathroomClick}>
+        <button
+          type="button"
+          className={clsx(styles.filterButton, hasBathroom && styles.active)}
+          onClick={handleBathroomClick}
+        >
           Bathroom
         </button>
-      </p>
-      <hr />
-      <hr />
-      <h2>Vehicle type</h2>
-      TYPE: {vehicleType}
+      </div>
+      {/* <p>AC: {labelAC}</p>
+      <p>Transmission: {transmission}</p>
+      <p>Kitchen: {labelK}</p>
+      <p>TV: {labelTV}</p>
+      <p>Bathroom: {labelBathroom}</p> */}
+      <h3 className={styles.filtersGroupTitle}>Vehicle type</h3>
+      <div className={styles.filtersButtonContainer}>
+        <button
+          type="button"
+          className={clsx(
+            styles.filterButton,
+            vehicleType === "panelTruck" && styles.active
+          )}
+          onClick={() => handleVehicleTypeClick("panelTruck")}
+        >
+          Van
+        </button>
+        <button
+          type="button"
+          className={clsx(
+            styles.filterButton,
+            vehicleType === "fullyIntegrated" && styles.active
+          )}
+          onClick={() => handleVehicleTypeClick("fullyIntegrated")}
+        >
+          Integrated
+        </button>
+        <button
+          type="button"
+          className={clsx(
+            styles.filterButton,
+            vehicleType === "alcove" && styles.active
+          )}
+          onClick={() => handleVehicleTypeClick("alcove")}
+        >
+          Alcove
+        </button>
+      </div>
+      {/* TYPE: {vehicleType} */}
       <button
         type="button"
-        onClick={() => handleVehicleTypeClick("panelTruck")}
+        className={clsx("button", styles.searchBtn)}
+        onClick={handleSearchClick}
       >
-        Van
-      </button>
-      <button
-        type="button"
-        onClick={() => handleVehicleTypeClick("fullyIntegrated")}
-      >
-        Integrated
-      </button>
-      <button type="button" onClick={() => handleVehicleTypeClick("alcove")}>
-        Alcove
-      </button>
-      <hr />
-      <hr />
-      <button type="button" onClick={handleSearchClick}>
         Search
       </button>
     </div>

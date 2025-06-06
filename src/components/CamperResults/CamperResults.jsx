@@ -11,6 +11,7 @@ import {
 import { useEffect } from "react";
 import { fetchCampers } from "../../redux/campersOps";
 import CamperCard from "../../components/CamperCard/CamperCard";
+import clsx from "clsx";
 
 export default function CamperResults() {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ export default function CamperResults() {
     dispatch(fetchCampers());
   };
 
- // if (loading) return <p>Loading...</p>;
+  // if (loading) return <p>Loading...</p>;
   if (error) return <p className={styles.error}>{error}</p>;
   if (filteredCampers === null) return null;
   if (filteredCampers.length === 0) return <p>No campers found.</p>;
@@ -43,7 +44,15 @@ export default function CamperResults() {
         <CamperCard key={c.id} camper={c} />
       ))}
 
-      {hasMorePages && <button type="button" onClick={handleLoadMore}>Load more</button>}
+      {hasMorePages && (
+        <button
+          type="button"
+          className={clsx("button", "secondary", styles.loadMoreBtn)}
+          onClick={handleLoadMore}
+        >
+          Load more
+        </button>
+      )}
     </div>
   );
 }

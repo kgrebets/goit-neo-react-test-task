@@ -1,0 +1,7 @@
+.loadMoreBtn {
+  margin: 40px auto;
+  transition: border 0.3s;
+}
+.loadMoreBtn:hover {
+  border-color: var(--color-red-dark);
+}

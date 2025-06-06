@@ -1,3 +1,86 @@
 .container {
-  width: 300px;
+  width: 360px;
+}
+
+.locationTitle {
+  color: var(--color-grey);
+
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+
+  font-style: normal;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.filtersTitle {
+  color: var(--Text, #475467);
+
+  /* Body 2 */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  margin-top: 40px;
+}
+
+.filtersGroupTitle {
+  color: var(--Main, #101828);
+
+  /* H3 */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 120% */
+  padding-top: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #dadde1;
+  margin-bottom: 24px;
+}
+
+.filtersButtonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  column-gap: 12px; /* Відступи між кнопками */
+  justify-content: flex-start; /* Або center — якщо треба по центру */
+  align-items: flex-start;
+  /* max-width: 456px;  якщо треба обмежити кількість у рядку */
+}
+
+.filterButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  border: 1px solid var(--color-grey-light);
+
+  padding: 16px 40px;
+  background: white;
+  color: var(--color-dark, #101828);
+
+  width: 112px; /* Або 100-120px — як на макеті */
+  height: 96px; /* Або 120px — як на макеті */
+
+  font-family: var(--font-family-main, Inter);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.08px;
+
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.filterButton.active {
+  border-color: var(--color-red);
+}
+
+.searchBtn {
+  margin-top: 40px;
 }

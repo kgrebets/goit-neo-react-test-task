@@ -1,34 +1,33 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 2rem;
-  background-color: white;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  background: var(--color-grey-light);
 }
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #1a1a1a;
+.headerContainer {
+  display: flex;
+  padding: 24px 64px;
+  align-items: center;
+  gap: 450px;
 }
 
 .nav {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 32px;
 }
 
 .link {
   text-decoration: none;
-  color: #1a1a1a;
-  font-weight: 500;
+
+  color: var(--color-dark);
+  text-align: center;
+
+  font-size: var(--font-size-md);
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+
   transition: color 0.3s;
 }
-
+.active,
 .link:hover {
-  color: #eb5757;
-}
-
-.active {
-  color: #eb5757;
+  color: var(--color-red-dark);
 }

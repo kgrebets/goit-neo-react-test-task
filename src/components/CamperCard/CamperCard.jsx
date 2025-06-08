@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import clsx from "clsx";
 import styles from "./CamperCard.module.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite, isFavorite } from "../../redux/favoritesSlice";
-import clsx from "clsx";
+import FeatureIcon from "../FeatureIcon/FeatureIcon";
 
 export default function CamperCard({ camper }) {
   const {
@@ -65,34 +66,10 @@ export default function CamperCard({ camper }) {
         <p className={styles.description}>{description}</p>
 
         <div className={styles.features}>
-          <div className={styles.feature}>
-            <svg width="20" height="20">
-              <use href="/icons.svg#transmission" />
-            </svg>
-            <span>{transmission}</span>
-          </div>
-          <div className={styles.feature}>
-            <svg width="20" height="20">
-              <use href="/icons.svg#engine" />
-            </svg>
-            <span>{engine}</span>
-          </div>
-          {kitchen && (
-            <div className={styles.feature}>
-              <svg width="20" height="20">
-                <use href="/icons.svg#kitchen" />
-              </svg>
-              <span>Kitchen</span>
-            </div>
-          )}
-          {AC && (
-            <div className={styles.feature}>
-              <svg width="20" height="20">
-                <use href="/icons.svg#wind" />
-              </svg>
-              <span>AC</span>
-            </div>
-          )}
+          <FeatureIcon icon="transmission" title={transmission} />
+          <FeatureIcon icon="engine" title={engine} />
+          {kitchen && <FeatureIcon icon="kitchen" title="Kitchen" />}
+          {AC && <FeatureIcon icon="wind" title="AC" />}
         </div>
 
         <div className={styles.showMoreWrapper}>

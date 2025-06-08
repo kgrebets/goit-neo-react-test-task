@@ -44,13 +44,6 @@ export default function CamperFilters() {
   const handleBathroomClick = () => dispatch(setBathroom());
   const handleVehicleTypeClick = (t) => dispatch(setVehicleType(t));
 
-  const labelAC = hasAC === true ? "Yes" : hasAC === null ? "Not set" : "ERR";
-  const labelK =
-    hasKitchen === true ? "Yes" : hasKitchen === null ? "Not set" : "ERR";
-  const labelTV = hasTV === true ? "Yes" : hasTV === null ? "Not set" : "ERR";
-  const labelBathroom =
-    hasBathroom === true ? "Yes" : hasBathroom === null ? "Not set" : "ERR";
-
   const handleSearchClick = () => {
     dispatch(setPage(1));
     dispatch(fetchCampers());
@@ -76,18 +69,58 @@ export default function CamperFilters() {
       <h2 className={styles.filtersTitle}>Filters</h2>
       <h3 className={styles.filtersGroupTitle}>Vehicle equipment</h3>
       <div className={styles.filtersButtonContainer}>
-        <FilterButton icon="wind" label="AC" isActive={hasAC} onClick={handleACClick} />
-        <FilterButton icon="transmission" label="Automatic" isActive={transmission} onClick={handleTransmissionClick} />
-        <FilterButton icon="kitchen" label="Kitchen" isActive={hasKitchen} onClick={handleKitchenClick} />
-        <FilterButton icon="monitor" label="TV" isActive={hasTV} onClick={handleTVClick} />
-        <FilterButton icon="shower" label="Bathroom" isActive={hasBathroom} onClick={handleBathroomClick} />
+        <FilterButton
+          icon="wind"
+          label="AC"
+          isActive={hasAC}
+          onClick={handleACClick}
+        />
+        <FilterButton
+          icon="transmission"
+          label="Automatic"
+          isActive={transmission}
+          onClick={handleTransmissionClick}
+        />
+        <FilterButton
+          icon="kitchen"
+          label="Kitchen"
+          isActive={hasKitchen}
+          onClick={handleKitchenClick}
+        />
+        <FilterButton
+          icon="monitor"
+          label="TV"
+          isActive={hasTV}
+          onClick={handleTVClick}
+        />
+        <FilterButton
+          icon="shower"
+          label="Bathroom"
+          isActive={hasBathroom}
+          onClick={handleBathroomClick}
+        />
       </div>
-      
+
       <h3 className={styles.filtersGroupTitle}>Vehicle type</h3>
       <div className={styles.filtersButtonContainer}>
-        <FilterButton icon="van" label="Van" isActive={vehicleType === "panelTruck"} onClick={() => handleVehicleTypeClick("panelTruck")} />
-        <FilterButton icon="fullyIntegrated" label="Integrated" isActive={vehicleType === "fullyIntegrated"} onClick={() => handleVehicleTypeClick("fullyIntegrated")} />
-        <FilterButton icon="alcove" label="Alcove" isActive={vehicleType === "alcove"} onClick={() => handleVehicleTypeClick("alcove")} />
+        <FilterButton
+          icon="van"
+          label="Van"
+          isActive={vehicleType === "panelTruck"}
+          onClick={() => handleVehicleTypeClick("panelTruck")}
+        />
+        <FilterButton
+          icon="fullyIntegrated"
+          label="Integrated"
+          isActive={vehicleType === "fullyIntegrated"}
+          onClick={() => handleVehicleTypeClick("fullyIntegrated")}
+        />
+        <FilterButton
+          icon="alcove"
+          label="Alcove"
+          isActive={vehicleType === "alcove"}
+          onClick={() => handleVehicleTypeClick("alcove")}
+        />
       </div>
 
       <button

@@ -1,12 +1,7 @@
 import clsx from "clsx";
 import styles from "./FilterButton.module.css";
 
-export default function FilterButton({
-  icon, // назва іконки у спрайті (наприклад, "wind")
-  label, // підпис (наприклад, "AC")
-  isActive, // чи активна кнопка
-  onClick, // обробник кліку
-}) {
+export default function FilterButton({ icon, label, isActive, onClick }) {
   return (
     <button
       type="button"

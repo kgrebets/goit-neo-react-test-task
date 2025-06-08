@@ -58,10 +58,7 @@ button {
 }
 
 .button {
-  display: flex;
   padding: 16px 60px;
-  justify-content: center;
-  align-items: center;
   border-radius: 200px;
   background: var(--color-red);
   border: none;

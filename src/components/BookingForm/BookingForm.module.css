@@ -1,30 +1,26 @@
 .bookingForm {
   padding: 44px;
   border-radius: 10px;
-  border: 1px solid var(--Gray-light, #dadde1);
+  border: 1px solid var(--color-grey-light);
   height: 100%;
 }
 
 .title {
-  color: var(--Main, #101828);
-
-  /* H3 */
-  font-family: Inter;
-  font-size: 20px;
+  color: var(--color-dark);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-xl);
   font-style: normal;
-  font-weight: 600;
-  line-height: 24px; /* 120% */
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
 }
 
 .subtitle {
-  color: var(--Gray, #6c717b);
-
-  /* Body */
-  font-family: Inter;
-  font-size: 16px;
+  color: var(--color-grey);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-md);
   font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 150% */
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
   margin-top: 8px;
 }
 
@@ -40,30 +36,22 @@
   width: 100%;
   border: none;
   border-radius: 12px;
-  background: #f7f7f7;
+  background: var(--color-grey-lightest);
   padding: 18px;
-  font-size: 1rem;
+  font-size: var(--font-size-md);
   resize: none;
   transition: border 0.2s;
   outline: none;
-
-  color: var(--Gray, #6c717b);
-
-  /* Body */
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 150% */
-}
-.input:focus,
-.textarea:focus {
-  border: 1px solid var(--color-grey-light);
+  color: var(--color-dark);
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
 }
 
 .textarea {
   min-height: 118px;
 }
+
 .submitBtn {
   margin: 0 auto;
   margin-top: 24px;

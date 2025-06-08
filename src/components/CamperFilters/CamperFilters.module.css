@@ -28,8 +28,12 @@
 
 .inputIcon {
   flex-shrink: 0;
-  color: var(--color-dark, #101828);
-  /* fill: currentColor; якщо треба */
+  color: #6c717b;
+  transition: color 0.2s;
+}
+
+.inputWrapper:focus-within .inputIcon {
+  color: #101828;
 }
 
 .input {

@@ -60,7 +60,7 @@ export default function CamperFilters() {
         <input
           type="text"
           value={location}
-          placeholder="Enter location"
+          placeholder="City"
           onChange={handleLocationChange}
           className={styles.input}
         />

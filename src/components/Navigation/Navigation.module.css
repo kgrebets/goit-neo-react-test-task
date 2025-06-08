@@ -3,7 +3,7 @@
 }
 .headerContainer {
   display: flex;
-  padding: 24px 64px;
+  padding: 24px 0;
   align-items: center;
   gap: 450px;
 }

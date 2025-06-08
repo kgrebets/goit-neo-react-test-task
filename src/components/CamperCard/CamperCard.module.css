@@ -1,24 +1,40 @@
 .card {
   display: flex;
-  gap: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  background-color: #fff;
+  padding: 24px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--Gray-light, #dadde1);
+  background: var(--White, #fff);
+  margin-bottom: 32px;
+}
+
+.name,
+.price {
+  color: var(--Main, #101828);
+
+  /* H2 */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
 }
 
 .image {
-  width: 200px;
-  height: 150px;
+  width: 292px;
+  height: 320px;
+  flex-shrink: 0;
+  border-radius: 10px;
   object-fit: cover;
+  /* object-position: 45% 45%; */
 }
 
 .content {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  height: 320px;
 }
 
 .header {
@@ -27,62 +43,93 @@
   align-items: baseline;
 }
 
-.name {
-  font-size: 1.2rem;
-  font-weight: 600;
+.reviewsLocation {
+  display: flex;
+  gap: 16px;
 }
 
-.price {
-  color: #eb5757;
-  font-weight: 600;
+.reviews {
+  display: flex;
+  align-items: center; /* вирівнює дочірні елементи по центру вертикалі */
+  gap: 4px; /* невеликий відступ між іконкою та текстом, за бажанням */
+  text-decoration: underline;
 }
 
 .location {
-  font-size: 0.85rem;
-  color: #666;
-  margin: 0.3rem 0;
+  display: flex;
+  gap: 4px;
+  align-items: center; /* вирівнює дочірні елементи по центру вертикалі */
 }
 
 .description {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  margin: 24px 0;
+  width: 525px;
+  overflow: hidden;
+  color: var(--Text, #475467);
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Додаємо це! */
+
+  /* Body */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
 }
 
 .features {
   display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  max-width: 400px;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
 }
 
 .feature {
-  display: inline-block;
-  padding: 0.3rem 0.6rem;
-  background-color: #f0f0f0;
-  border-radius: 999px;
-  font-size: 0.75rem;
+  display: flex;
+  padding: 12px 18px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  background: var(--Badges, #f2f4f7);
+  mix-blend-mode: multiply;
+  text-transform: capitalize;
+}
+.feature img {
+  width: 20px;
+  height: 20px;
 }
 
-.showMore {
-  display: inline-block;
-  align-self: flex-start;
-  background-color: #eb5757;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.3s;
+.showMoreWrapper {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-start; /* або center, якщо треба центрувати кнопку */
 }
-
-.showMore:hover {
-  background-color: #ff7676;
+.showMoreButton {
+  display: inline-block;
+  margin-top: 24px;
 }
 
 .favoriteBtn {
-  background: none;
+  width: 24px;
+  height: 24px;
   border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  margin-left: 1rem;
+  background: none;
+  outline: none;
+}
+
+.favoriteIcon {
+  color: #101828; /* outline (black/темний) */
+}
+.favoriteIcon.active {
+  color: #e44848; /* filled (червоний) */
+}
+
+.starIcon {
+  color: #101828; /* outline (black/темний) */
+}
+
+.starIcon.active {
+  color: #ffc531; /* outline (black/темний) */
 }

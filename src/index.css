@@ -31,6 +31,7 @@ body {
   font-family: var(--font-family-main);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-regular);
+  min-width: 1350px;
 }
 
 .container {
@@ -86,6 +87,7 @@ button {
   outline: none;
   color: var(--color-white);
   cursor: pointer;
+  text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
 
@@ -102,4 +104,10 @@ button {
   font-weight: var(--font-weight-medium);
   line-height: 1.5;
   letter-spacing: -0.08px;
+}
+
+.button:disabled,
+.button.secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

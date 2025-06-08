@@ -17,11 +17,13 @@ import {
   selectLocationFilter,
 } from "../../redux/filtersSlice";
 import { fetchCampers } from "../../redux/campersOps";
-import { setPage } from "../../redux/campersSlice";
+import { selectLoading, setPage } from "../../redux/campersSlice";
 import clsx from "clsx";
 
 export default function CamperFilters() {
   const dispatch = useDispatch();
+
+  const loading = useSelector(selectLoading);
 
   const location = useSelector(selectLocationFilter) || "";
   const hasAC = useSelector(selectACFilter);
@@ -144,6 +146,7 @@ export default function CamperFilters() {
         type="button"
         className={clsx("button", styles.searchBtn)}
         onClick={handleSearchClick}
+        disabled={loading}
       >
         Search
       </button>

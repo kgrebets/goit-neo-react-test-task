@@ -15,11 +15,3 @@
   gap: 4px;
   align-items: center; /* вирівнює дочірні елементи по центру вертикалі */
 }
-
-.starIcon {
-  color: #101828; /* outline (black/темний) */
-}
-
-.starIcon.active {
-  color: #ffc531; /* outline (black/темний) */
-}

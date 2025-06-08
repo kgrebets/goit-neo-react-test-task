@@ -1,0 +1,7 @@
+.starIcon {
+  color: #F2F4F7; /* outline (black/темний) */
+}
+
+.starIcon.active {
+  color: #ffc531; /* outline (black/темний) */
+}

@@ -12,6 +12,9 @@ import {
 import CamperFeature from "../../components/CamperFeature/CamperFeature";
 import BookingForm from "../../components/BookingForm/BookingForm";
 import CamperReviews from "../../components/CamperReviews/CamperReviews";
+import ReviewsLocation from "../../components/ReviewsLocation/ReviewsLocation";
+import clsx from "clsx";
+import Loader from "../../components/Loader/Loader";
 
 export default function CamperDetailsPage() {
   const dispatch = useDispatch();
@@ -28,58 +31,59 @@ export default function CamperDetailsPage() {
     return () => dispatch(resetCamperDetails());
   }, [id, dispatch]);
 
-  if (loading) return <div className={styles.loading}>Loading...</div>;
+  if (loading) return <Loader />;
   if (error) return <div className={styles.error}>{error}</div>;
   if (!camper) return <div className={styles.notfound}>Not found</div>;
 
   const isFeatureTab = tab === "features";
   return (
-    <div className={styles.wrapper}>
+    <div className="container">
       <h2 className={styles.name}>{camper.name}</h2>
-      <div className={styles.meta}>
-        <span className={styles.rating}>
-          <span className={styles.star}>⭐</span>
-          {camper.rating}
-          <span className={styles.reviewLink}>
-            ({camper.reviews?.length} Reviews)
-          </span>
-        </span>
-        <span className={styles.location}>📍{camper.location}</span>
-      </div>
-      <div className={styles.price}>
-        €{Number(camper.price).toLocaleString("en-US")}.00
-      </div>
+
+      <ReviewsLocation camper={camper} />
+
+      <p className={styles.price}>
+        &euro;
+        {camper.price.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+      </p>
+
       <div className={styles.gallery}>
         {camper.gallery?.map((img, idx) => (
           <img
             className={styles.galleryImg}
             key={idx}
             src={img.thumb}
-            alt={`${camper.name} ${idx + 1}`}
+            alt={`${camper.name} image ${idx + 1}`}
           />
         ))}
       </div>
       <div className={styles.description}>{camper.description}</div>
-      <hr />
 
-      <div className={styles.tabs}>
-        <button
-          className={isFeatureTab ? styles.activeTab : ""}
-          onClick={() => setTab("features")}
-        >
-          Features
-        </button>
-        <button
-          className={isFeatureTab ? styles.activeTab : ""}
-          onClick={() => setTab("reviews")}
-        >
-          Reviews
-        </button>
+      <div className={styles.tabsWrapper}>
+        <div className={styles.tabs}>
+          <button
+            className={clsx(styles.tab, isFeatureTab ? styles.active : "")}
+            onClick={() => setTab("features")}
+          >
+            Features
+          </button>
+          <button
+            className={clsx(styles.tab, !isFeatureTab ? styles.active : "")}
+            onClick={() => setTab("reviews")}
+          >
+            Reviews
+          </button>
+        </div>
       </div>
+
       <div className={styles.bottomContainer}>
-        {isFeatureTab && <CamperFeature camper={camper} />}
-        {!isFeatureTab && <CamperReviews camper={camper} />}
-        <BookingForm camper={camper} />
+        <div className={styles.leftPanel}>
+          {isFeatureTab && <CamperFeature camper={camper} />}
+          {!isFeatureTab && <CamperReviews camper={camper} />}
+        </div>
+        <div className={styles.rightPanel}>
+          <BookingForm camper={camper} />
+        </div>
       </div>
     </div>
   );

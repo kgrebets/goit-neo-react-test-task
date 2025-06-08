@@ -1,74 +1,128 @@
-.wrapper {
-  margin: 0 auto 2rem auto;
-  max-width: 1440px;
-  padding: 0 2rem;
+.name,
+.price {
+  color: var(--Main, #101828);
+
+  /* H2 */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
 }
 
 .name {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.meta {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  color: #232323;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.rating {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.star {
-  color: #ffc700;
-  font-size: 1.2em;
-}
-
-.reviewLink {
-  color: #007bff;
-  margin-left: 0.3rem;
-  text-decoration: underline;
-  cursor: pointer;
-  font-size: 1em;
-}
-
-.location {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  color: #444;
+  margin-top: 48px;
+  margin-bottom: 8px;
 }
 
 .price {
-  font-size: 2rem;
-  font-weight: 500;
-  margin: 0.7rem 0 1.2rem 0;
+  margin-top: 16px;
 }
 
 .gallery {
   display: flex;
-  gap: 2.5rem;
-  margin-bottom: 2rem;
+  width: 1312px;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 28px;
 }
 
 .galleryImg {
-  width: 260px;
-  height: 260px;
+  width: 292px;
+  height: 312px;
+  flex-shrink: 0;
+  border-radius: 10px;
   object-fit: cover;
-  border-radius: 16px;
-  background: #eee;
-  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.04);
 }
 
 .description {
-  color: #767676;
-  font-size: 1.18rem;
-  margin-top: 1.2rem;
-  line-height: 1.6;
+  color: var(--Text, #475467);
+
+  /* Body */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+
+  margin-top: 28px;
 }
+
+.tabs {
+  margin-top: 44px;
+}
+
+.tabsWrapper {
+  border-bottom: 2px solid #e4e5e6; /* сірий бордер */
+  margin-bottom: 20px; /* щоб не зливалося з контентом */
+}
+
+.tabs {
+  display: flex;
+  gap: 40px; /* або 3-4rem */
+  position: relative;
+}
+
+.tab {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 20px 0 10px 0;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s;
+
+  color: var(--Main, #101828);
+
+  /* H3 */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 120% */
+}
+
+.tab.active {
+  color: #101828;
+}
+
+.tab.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 5px;
+  background: #e44848; /* червона лінія */
+  z-index: 1;
+}
+
+.tabsWrapper {
+  position: relative;
+}
+.tabs {
+  position: relative;
+  z-index: 2;
+}
+
+.bottomContainer {
+  display: flex;
+  gap: 40px;
+  flex-direction: row;
+  padding-bottom: 80px;
+}
+
+.leftPanel,
+.rightPanel {
+  flex: 1 1 0%; /* розтягуються порівну */
+  /*min-width: 0;  дозволяє контенту стискатись, не переламуючи флекс-контейнер */
+}
+/* 
+.leftPanel {
+ background: red;
+} */
+
+.rightPanel {
+ background: green;
+} 

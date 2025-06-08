@@ -5,20 +5,19 @@ import styles from "./CamperCard.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite, isFavorite } from "../../redux/favoritesSlice";
 import FeatureIcon from "../FeatureIcon/FeatureIcon";
+import ReviewsLocation from "../ReviewsLocation/ReviewsLocation";
 
 export default function CamperCard({ camper }) {
   const {
     id,
     name,
     price,
-    location,
     gallery,
     description,
     transmission,
     engine,
     kitchen,
     AC,
-    rating,
   } = camper;
 
   const dispatch = useDispatch();
@@ -28,10 +27,6 @@ export default function CamperCard({ camper }) {
     dispatch(toggleFavorite(id));
   };
 
-  const reviewText =
-    camper.reviews.length.toString() +
-    " Review" +
-    (camper.reviews.length == 1 ? "" : "s");
   return (
     <div className={styles.card}>
       <img src={gallery[0].thumb} alt={name} className={styles.image} />
@@ -44,24 +39,7 @@ export default function CamperCard({ camper }) {
           </p>
         </div>
 
-        <div className={styles.reviewsLocation}>
-          <div className={styles.reviews}>
-            <svg
-              width="16"
-              height="16"
-              className={clsx(styles.starIcon, styles.active)}
-            >
-              <use href="/icons.svg#star" />
-            </svg>
-            {rating}({reviewText})
-          </div>
-          <div className={styles.location}>
-            <svg width="16" height="16">
-              <use href="/icons.svg#location" />
-            </svg>
-            {location}
-          </div>
-        </div>
+        <ReviewsLocation camper={camper} />
 
         <p className={styles.description}>{description}</p>
 

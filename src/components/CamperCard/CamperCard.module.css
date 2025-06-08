@@ -43,24 +43,6 @@
   align-items: baseline;
 }
 
-.reviewsLocation {
-  display: flex;
-  gap: 16px;
-}
-
-.reviews {
-  display: flex;
-  align-items: center; /* вирівнює дочірні елементи по центру вертикалі */
-  gap: 4px; /* невеликий відступ між іконкою та текстом, за бажанням */
-  text-decoration: underline;
-}
-
-.location {
-  display: flex;
-  gap: 4px;
-  align-items: center; /* вирівнює дочірні елементи по центру вертикалі */
-}
-
 .description {
   margin: 24px 0;
   width: 525px;
@@ -109,12 +91,4 @@
 }
 .favoriteIcon.active {
   color: #e44848; /* filled (червоний) */
-}
-
-.starIcon {
-  color: #101828; /* outline (black/темний) */
-}
-
-.starIcon.active {
-  color: #ffc531; /* outline (black/темний) */
 }

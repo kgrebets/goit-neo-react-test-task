@@ -1,0 +1,25 @@
+.reviewsLocation {
+  display: flex;
+  gap: 16px;
+}
+
+.reviews {
+  display: flex;
+  align-items: center; /* вирівнює дочірні елементи по центру вертикалі */
+  gap: 4px; /* невеликий відступ між іконкою та текстом, за бажанням */
+  text-decoration: underline;
+}
+
+.location {
+  display: flex;
+  gap: 4px;
+  align-items: center; /* вирівнює дочірні елементи по центру вертикалі */
+}
+
+.starIcon {
+  color: #101828; /* outline (black/темний) */
+}
+
+.starIcon.active {
+  color: #ffc531; /* outline (black/темний) */
+}

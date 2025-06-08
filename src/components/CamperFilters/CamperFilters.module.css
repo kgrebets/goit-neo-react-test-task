@@ -13,6 +13,39 @@
   margin-bottom: 8px;
 }
 
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  width: 360px;
+  height: 56px;
+  padding: 0 20px;
+  background: var(--color-grey-lightest, #f7f7f7);
+  border-radius: 16px;
+  border: none;
+  position: relative;
+  gap: 8px; /* Відстань між іконкою та текстом */
+}
+
+.inputIcon {
+  flex-shrink: 0;
+  color: var(--color-dark, #101828);
+  /* fill: currentColor; якщо треба */
+}
+
+.input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family-main, "Inter", sans-serif);
+  font-size: var(--font-size-md, 24px);
+  font-weight: var(--font-weight-regular, 400);
+  color: var(--color-dark, #101828);
+  /* щоб не було зайвих відступів */
+  padding: 0;
+}
+
 .filtersTitle {
   color: var(--color-dark-blue);
   font-family: var(--font-family-main);
@@ -45,29 +78,7 @@
   align-items: flex-start;
 }
 
-.filterButton {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  border: 1px solid var(--color-grey-light);
-  padding: 16px 40px;
-  background: var(--color-white);
-  color: var(--color-dark);
-  width: 112px;
-  height: 96px;
-  font-family: var(--font-family-main);
-  font-size: var(--font-size-md);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.5;
-  letter-spacing: -0.08px;
-  transition: border-color 0.2s, background 0.2s;
-}
 
-.filterButton.active {
-  border-color: var(--color-red);
-}
 
 .searchBtn {
   margin-top: 40px;

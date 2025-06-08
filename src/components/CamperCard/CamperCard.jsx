@@ -66,29 +66,30 @@ export default function CamperCard({ camper }) {
 
         <div className={styles.features}>
           <div className={styles.feature}>
-            
-             <svg
-              width="20"
-              height="20"
-            >
+            <svg width="20" height="20">
               <use href="/icons.svg#transmission" />
             </svg>
-
             <span>{transmission}</span>
           </div>
           <div className={styles.feature}>
-            <img alt="tran" />
+            <svg width="20" height="20">
+              <use href="/icons.svg#engine" />
+            </svg>
             <span>{engine}</span>
           </div>
           {kitchen && (
             <div className={styles.feature}>
-              <img alt="tran" />
+              <svg width="20" height="20">
+                <use href="/icons.svg#kitchen" />
+              </svg>
               <span>Kitchen</span>
             </div>
           )}
           {AC && (
             <div className={styles.feature}>
-              <img alt="tran" />
+              <svg width="20" height="20">
+                <use href="/icons.svg#wind" />
+              </svg>
               <span>AC</span>
             </div>
           )}

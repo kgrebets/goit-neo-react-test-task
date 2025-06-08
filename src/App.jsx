@@ -3,6 +3,7 @@ import { Suspense, lazy } from "react";
 
 import Navigation from "./components/Navigation/Navigation";
 import Loader from "./components/Loader/Loader";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const CampersPage = lazy(() => import("./pages/CampersPage/CampersPage"));
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<CampersPage />} />
           <Route path="/catalog/:id" element={<CamperDetailsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

@@ -1,28 +1,38 @@
 .bookingForm {
-  max-width: 430px;
-  margin: 0 auto;
-  padding: 2rem 1rem 1.5rem 1rem;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  background: #fff;
+  padding: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--Gray-light, #dadde1);
+  height: 100%;
 }
 
 .title {
-  font-size: 1.2rem;
+  color: var(--Main, #101828);
+
+  /* H3 */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
   font-weight: 600;
-  margin-bottom: 0.2rem;
+  line-height: 24px; /* 120% */
 }
 
 .subtitle {
-  font-size: 1rem;
-  color: #7b7b7b;
-  margin-bottom: 1.5rem;
+  color: var(--Gray, #6c717b);
+
+  /* Body */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  margin-top: 8px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 14px;
+  margin-top: 24px;
 }
 
 .input,
@@ -31,38 +41,32 @@
   border: none;
   border-radius: 12px;
   background: #f7f7f7;
-  padding: 1rem;
+  padding: 18px;
   font-size: 1rem;
   resize: none;
   transition: border 0.2s;
   outline: none;
+
+  color: var(--Gray, #6c717b);
+
+  /* Body */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
 }
 .input:focus,
 .textarea:focus {
-  border: 1px solid #eb5757;
+  border: 1px solid var(--color-grey-light);
 }
 
 .textarea {
-  min-height: 72px;
+  min-height: 118px;
 }
-
-.button {
-  margin-top: 0.5rem;
-  padding: 0.8rem 0;
-  width: 140px;
-  border: none;
-  border-radius: 999px;
-  background: #eb5757;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.1rem;
-  align-self: center;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
+.submitBtn {
+  margin: 0 auto;
+  margin-top: 24px;
 }
 
 .error {

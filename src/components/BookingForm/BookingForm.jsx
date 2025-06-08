@@ -1,11 +1,14 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import styles from "./BookingForm.module.css";
+import clsx from "clsx";
 
 const formSchema = Yup.object().shape({
-  name: Yup.string().required("Required"),
-  email: Yup.string().email("Invalid email address").required("Required"),
-  date: Yup.string().required("Required"),
+  name: Yup.string().required("Please put name"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Please put valid email"),
+  date: Yup.string().required("Please choose booking date"),
   comment: Yup.string(),
 });
 
@@ -78,7 +81,7 @@ export default function BookingForm({ camper }) {
             name="comment"
           />
 
-          <button type="submit" className={styles.button}>
+          <button type="submit" className={clsx("button", styles.submitBtn)}>
             Send
           </button>
         </Form>

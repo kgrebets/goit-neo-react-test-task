@@ -3,6 +3,7 @@
 }
 
 .loadMoreBtn {
+  display: block;
   margin: 40px auto;
   transition: border 0.3s;
 }

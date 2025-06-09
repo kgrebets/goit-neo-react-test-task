@@ -8,9 +8,9 @@ export default function HomePage() {
         <div className="container">
           <div className={styles.heroContent}>
             <h1 className={styles.title}>Campers of your dreams</h1>
-            <p className={styles.subtitle}>
+            <h2 className={styles.subtitle}>
               You can find everything you want in our catalog
-            </p>
+            </h2>
             <Link to="/catalog" className="button">
               View Now
             </Link>

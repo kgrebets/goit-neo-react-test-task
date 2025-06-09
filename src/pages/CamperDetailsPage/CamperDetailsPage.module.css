@@ -1,13 +1,11 @@
 .name,
 .price {
-  color: var(--Main, #101828);
-
-  /* H2 */
-  font-family: Inter;
-  font-size: 24px;
+  color: var(--color-dark);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-2xl);
   font-style: normal;
-  font-weight: 600;
-  line-height: 32px; /* 133.333% */
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.33;
 }
 
 .name {
@@ -36,15 +34,13 @@
 }
 
 .description {
-  color: var(--Text, #475467);
+  color: var(--color-grey-dark);
 
-  /* Body */
-  font-family: Inter;
-  font-size: 16px;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-md);
   font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 150% */
-
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
   margin-top: 28px;
 }
 
@@ -53,14 +49,16 @@
 }
 
 .tabsWrapper {
-  border-bottom: 2px solid #e4e5e6; /* сірий бордер */
-  margin-bottom: 20px; /* щоб не зливалося з контентом */
+  border-bottom: 2px solid var(--color-grey-light);
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .tabs {
   display: flex;
-  gap: 40px; /* або 3-4rem */
+  gap: 40px;
   position: relative;
+  z-index: 2;
 }
 
 .tab {
@@ -72,18 +70,17 @@
   outline: none;
   transition: color 0.2s;
 
-  color: var(--Main, #101828);
+  color: var(--color-dark);
 
-  /* H3 */
-  font-family: Inter;
-  font-size: 20px;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-xl);
   font-style: normal;
-  font-weight: 600;
-  line-height: 24px; /* 120% */
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
 }
 
 .tab.active {
-  color: #101828;
+  color: var(--color-dark);
 }
 
 .tab.active::after {
@@ -94,16 +91,8 @@
   right: 0;
   bottom: -3px;
   height: 5px;
-  background: #e44848; /* червона лінія */
+  background: var(--color-red);
   z-index: 1;
-}
-
-.tabsWrapper {
-  position: relative;
-}
-.tabs {
-  position: relative;
-  z-index: 2;
 }
 
 .bottomContainer {
@@ -115,14 +104,5 @@
 
 .leftPanel,
 .rightPanel {
-  flex: 1 1 0%; /* розтягуються порівну */
-  /*min-width: 0;  дозволяє контенту стискатись, не переламуючи флекс-контейнер */
+  flex: 1 1 0%;
 }
-/* 
-.leftPanel {
- background: red;
-} */
-
-/* .rightPanel {
- background: green;
-}  */

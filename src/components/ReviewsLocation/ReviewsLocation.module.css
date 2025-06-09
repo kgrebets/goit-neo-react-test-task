@@ -5,13 +5,13 @@
 
 .reviews {
   display: flex;
-  align-items: center; /* вирівнює дочірні елементи по центру вертикалі */
-  gap: 4px; /* невеликий відступ між іконкою та текстом, за бажанням */
+  align-items: center;
+  gap: 4px;
   text-decoration: underline;
 }
 
 .location {
   display: flex;
   gap: 4px;
-  align-items: center; /* вирівнює дочірні елементи по центру вертикалі */
+  align-items: center;
 }

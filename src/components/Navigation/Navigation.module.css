@@ -16,10 +16,8 @@
 
 .link {
   text-decoration: none;
-
   color: var(--color-dark);
   text-align: center;
-
   font-size: var(--font-size-md);
   font-style: normal;
   font-weight: var(--font-weight-medium);

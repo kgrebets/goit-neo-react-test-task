@@ -17,7 +17,7 @@ export default function CamperReviews({ camper: { reviews } }) {
   return (
     <ul className={styles.list}>
       {reviews.map((review, idx) => (
-        <li className={styles.reviewItem} key={idx}>
+        <li key={idx}>
           <div className={styles.avatarBlock}>
             <div className={styles.avatar}>
               {getInitial(review.reviewer_name)}

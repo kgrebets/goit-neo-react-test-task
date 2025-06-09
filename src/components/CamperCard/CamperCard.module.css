@@ -5,21 +5,19 @@
   align-items: flex-start;
   gap: 24px;
   border-radius: 20px;
-  border: 1px solid var(--Gray-light, #dadde1);
-  background: var(--White, #fff);
+  border: 1px solid var(--color-grey-light);
+  background: var(--color-white);
   margin-bottom: 32px;
 }
 
 .name,
 .price {
-  color: var(--Main, #101828);
-
-  /* H2 */
-  font-family: Inter;
-  font-size: 24px;
+  color: var(--color-dark);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-2xl);
   font-style: normal;
-  font-weight: 600;
-  line-height: 32px; /* 133.333% */
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.33;
 }
 
 .image {
@@ -28,7 +26,6 @@
   flex-shrink: 0;
   border-radius: 10px;
   object-fit: cover;
-  /* object-position: 45% 45%; */
 }
 
 .content {
@@ -47,16 +44,14 @@
   margin: 24px 0;
   width: 525px;
   overflow: hidden;
-  color: var(--Text, #475467);
+  color: var(--color-text);
   text-overflow: ellipsis;
-  white-space: nowrap; /* Додаємо це! */
-
-  /* Body */
-  font-family: Inter;
-  font-size: 16px;
+  white-space: nowrap;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-md);
   font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 150% */
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
 }
 
 .features {
@@ -71,8 +66,9 @@
 .showMoreWrapper {
   margin-top: auto;
   display: flex;
-  align-items: flex-start; /* або center, якщо треба центрувати кнопку */
+  align-items: flex-start;
 }
+
 .showMoreButton {
   display: inline-block;
   margin-top: 24px;
@@ -87,8 +83,8 @@
 }
 
 .favoriteIcon {
-  color: #101828; /* outline (black/темний) */
+  color: var(--color-dark);
 }
 .favoriteIcon.active {
-  color: #e44848; /* filled (червоний) */
+  color: var(--color-red);
 }

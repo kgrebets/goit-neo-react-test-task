@@ -6,9 +6,6 @@
   list-style: none;
 }
 
-.reviewItem {
-}
-
 .avatarBlock {
   display: flex;
   align-items: center;
@@ -19,34 +16,32 @@
 .avatar {
   width: 60px;
   height: 60px;
-  background: #f2f4f7;
+  background: var(--color-grey-lightest);
   border-radius: 50%;
   font-size: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: #e44848;
+  color: var(--color-red);
 
-  /* H2 */
-  font-family: Inter;
-  font-size: 24px;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-2xl);
   font-style: normal;
-  font-weight: 600;
-  line-height: 32px; /* 133.333% */
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.33;
 }
 
 .name {
   margin-bottom: 4px;
 
-  color: var(--Main, #101828);
+  color: var(--color-dark);
 
-  /* Body 2 */
-  font-family: Inter;
-  font-size: 16px;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-md);
   font-style: normal;
-  font-weight: 500;
-  line-height: 24px; /* 150% */
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
 }
 
 .stars {
@@ -58,11 +53,9 @@
 .comment {
   line-height: 1.5;
 
-  color: var(--Text, #475467);
-
-  /* Body */
-  font-family: Inter;
-  font-size: 16px;
+  color: var(--color-dark-blue);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-md);
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
 }

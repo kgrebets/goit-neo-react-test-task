@@ -4,7 +4,7 @@
   align-items: center;
   gap: 8px;
   border-radius: 100px;
-  background: var(--Badges, #f2f4f7);
+  background: var(--color-grey-lighter);
   mix-blend-mode: multiply;
   text-transform: capitalize;
 }

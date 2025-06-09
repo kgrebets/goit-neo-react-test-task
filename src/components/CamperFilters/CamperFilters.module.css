@@ -19,21 +19,21 @@
   width: 360px;
   height: 56px;
   padding: 0 20px;
-  background: var(--color-grey-lightest, #f7f7f7);
+  background: var(--color-grey-lightest);
   border-radius: 16px;
   border: none;
   position: relative;
-  gap: 8px; /* Відстань між іконкою та текстом */
+  gap: 8px;
 }
 
 .inputIcon {
   flex-shrink: 0;
-  color: #6c717b;
+  color: var(--color-grey-medium);
   transition: color 0.2s;
 }
 
 .inputWrapper:focus-within .inputIcon {
-  color: #101828;
+  color: var(--color-dark);
 }
 
 .input {
@@ -42,11 +42,10 @@
   border: none;
   outline: none;
   background: transparent;
-  font-family: var(--font-family-main, "Inter", sans-serif);
-  font-size: var(--font-size-md, 24px);
-  font-weight: var(--font-weight-regular, 400);
-  color: var(--color-dark, #101828);
-  /* щоб не було зайвих відступів */
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-dark);
   padding: 0;
 }
 

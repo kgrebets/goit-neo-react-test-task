@@ -1,7 +1,7 @@
 .starIcon {
-  color: #F2F4F7; /* outline (black/темний) */
+  color: var(--color-grey-lightest);
 }
 
 .starIcon.active {
-  color: #ffc531; /* outline (black/темний) */
+  color: var(--color-yellow);
 }

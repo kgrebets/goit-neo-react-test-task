@@ -6,7 +6,7 @@
   align-items: center;
   gap: 100px;
   border-radius: 10px;
-  background: var(--Inputs, #f7f7f7);
+  background: var(--color-grey-lightest);
 }
 
 .featuresWrapper {
@@ -20,19 +20,17 @@
 
 .header {
   text-align: left;
-  color: var(--Main, #101828);
-
-  /* H3 */
-  font-family: Inter;
-  font-size: 20px;
+  color: var(--color-dark);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-xl);
   font-style: normal;
-  font-weight: 600;
-  line-height: 24px; /* 120% */
-
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
   padding-bottom: 24px;
-  border-bottom: 1px solid #dadde1;
+  border-bottom: 1px solid var(--color-grey-light);
   margin-bottom: 24px;
 }
+
 .vehicleTable {
   width: 100%;
   border-collapse: collapse;
@@ -42,15 +40,12 @@
 
 .vehicleTable td {
   padding: 8px 0;
-
-  color: var(--Main, #101828);
-
-  /* Body 2 */
-  font-family: Inter;
-  font-size: 16px;
+  color: var(--color-dark);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-md);
   font-style: normal;
-  font-weight: 500;
-  line-height: 24px; /* 150% */
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
 }
 
 .vehicleTable td:first-child {
